@@ -6,6 +6,9 @@ This software is covered by GPL license. You also can obtain Commercial or Enter
 
 (c) Dinamenta, UAB.
 */
+
+import 'scheduler/codebase/dhtmlxscheduler.js'
+
 window.dhtmlXTooltip=scheduler.dhtmlXTooltip=window.dhtmlxTooltip={},dhtmlXTooltip.config={className:"dhtmlXTooltip tooltip",timeout_to_display:50,timeout_to_hide:50,delta_x:15,delta_y:-20},dhtmlXTooltip.tooltip=document.createElement("div"),dhtmlXTooltip.tooltip.className=dhtmlXTooltip.config.className,dhtmlXTooltip.show=function(e,t){if(!scheduler.config.touch||scheduler.config.touch_tooltip){var a=dhtmlXTooltip,r=this.tooltip,n=r.style;a.tooltip.className=a.config.className;var i=this.position(e),l=e.target||e.srcElement;
 
 if(!this.isTooltip(l)){var d=i.x+(a.config.delta_x||0),s=i.y-(a.config.delta_y||0);n.visibility="hidden",n.removeAttribute?(n.removeAttribute("right"),n.removeAttribute("bottom")):(n.removeProperty("right"),n.removeProperty("bottom")),n.left="0",n.top="0",this.tooltip.innerHTML=t,document.body.appendChild(this.tooltip);var o=this.tooltip.offsetWidth,_=this.tooltip.offsetHeight;document.body.offsetWidth-d-o<0?(n.removeAttribute?n.removeAttribute("left"):n.removeProperty("left"),n.right=document.body.offsetWidth-d+2*(a.config.delta_x||0)+"px"):0>d?n.left=i.x+Math.abs(a.config.delta_x||0)+"px":n.left=d+"px",

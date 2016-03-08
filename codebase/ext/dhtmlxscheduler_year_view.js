@@ -6,6 +6,9 @@ This software is covered by GPL license. You also can obtain Commercial or Enter
 
 (c) Dinamenta, UAB.
 */
+
+import 'scheduler/codebase/dhtmlxscheduler.js'
+
 scheduler.config.year_x=4,scheduler.config.year_y=3,scheduler.xy.year_top=0,scheduler.templates.year_date=function(e){return scheduler.date.date_to_str(scheduler.locale.labels.year_tab+" %Y")(e)},scheduler.templates.year_month=scheduler.date.date_to_str("%F"),scheduler.templates.year_scale_date=scheduler.date.date_to_str("%D"),scheduler.templates.year_tooltip=function(e,t,a){return a.text},function(){var e=function(){return"year"==scheduler._mode};scheduler.dblclick_dhx_month_head=function(t){if(e()){
 var a=t.target||t.srcElement;if(-1!=a.parentNode.className.indexOf("dhx_before")||-1!=a.parentNode.className.indexOf("dhx_after"))return!1;var r=this.templates.xml_date(a.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.getAttribute("date"));r.setDate(parseInt(a.innerHTML,10));var n=this.date.add(r,1,"day");!this.config.readonly&&this.config.dblclick_create&&this.addEventNow(r.valueOf(),n.valueOf(),t)}};var t=scheduler.changeEventId;scheduler.changeEventId=function(){t.apply(this,arguments),
 e()&&this.year_view(!0)};var a=scheduler.render_data,r=scheduler.date.date_to_str("%Y/%m/%d"),n=scheduler.date.str_to_date("%Y/%m/%d");scheduler.render_data=function(t){if(!e())return a.apply(this,arguments);for(var r=0;r<t.length;r++)this._year_render_event(t[r])};var d=scheduler.clear_view;scheduler.clear_view=function(){if(!e())return d.apply(this,arguments);var t=scheduler._year_marked_cells,a=null;for(var r in t)t.hasOwnProperty(r)&&(a=t[r],a.className="dhx_month_head",a.setAttribute("date",""));

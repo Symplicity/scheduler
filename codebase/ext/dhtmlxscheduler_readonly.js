@@ -6,6 +6,9 @@ This software is covered by GPL license. You also can obtain Commercial or Enter
 
 (c) Dinamenta, UAB.
 */
+
+import 'scheduler/codebase/dhtmlxscheduler.js'
+
 scheduler.attachEvent("onTemplatesReady",function(){function e(e,t,a,r){for(var n=t.getElementsByTagName(e),i=a.getElementsByTagName(e),l=i.length-1;l>=0;l--){var a=i[l];if(r){var d=document.createElement("SPAN");d.className="dhx_text_disabled",d.innerHTML=r(n[l]),a.parentNode.insertBefore(d,a),a.parentNode.removeChild(a)}else a.disabled=!0,t.checked&&(a.checked=!0)}}var t=scheduler.config.lightbox.sections.slice(),a=scheduler.config.buttons_left.slice(),r=scheduler.config.buttons_right.slice();scheduler.attachEvent("onBeforeLightbox",function(e){
 if(this.config.readonly_form||this.getEvent(e).readonly){this.config.readonly_active=!0;for(var n=0;n<this.config.lightbox.sections.length;n++)this.config.lightbox.sections[n].focus=!1}else this.config.readonly_active=!1,scheduler.config.lightbox.sections=t.slice(),scheduler.config.buttons_left=a.slice(),scheduler.config.buttons_right=r.slice();var i=this.config.lightbox.sections;if(this.config.readonly_active){for(var n=0;n<i.length;n++)if("recurring"==i[n].type){this.config.readonly_active&&i.splice(n,1);
 
